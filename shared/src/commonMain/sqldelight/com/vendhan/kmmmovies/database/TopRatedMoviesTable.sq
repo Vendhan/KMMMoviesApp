@@ -1,0 +1,13 @@
+CREATE TABLE TopRatedMovies(
+movieID INTEGER NOT NULL,
+FOREIGN KEY (movieID) REFERENCES Movies(id)
+);
+
+selectAll:
+SELECT topRatedMovies.*
+FROM Movies AS topRatedMovies
+INNER JOIN TopRatedMovies ON topRatedMovies.id = TopRatedMovies.movieID;
+
+insertID:
+INSERT OR IGNORE INTO TopRatedMovies
+VALUES (?);

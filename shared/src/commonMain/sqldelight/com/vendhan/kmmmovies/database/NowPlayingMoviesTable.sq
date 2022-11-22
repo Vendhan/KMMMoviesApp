@@ -1,0 +1,13 @@
+CREATE TABLE NowPlayingMovies(
+movieID INTEGER NOT NULL,
+FOREIGN KEY (movieID) REFERENCES Movies(id)
+);
+
+selectAll:
+SELECT nowPlayingMovies.*
+FROM Movies AS nowPlayingMovies
+INNER JOIN NowPlayingMovies ON nowPlayingMovies.id = NowPlayingMovies.movieID;
+
+insertID:
+INSERT OR IGNORE INTO NowPlayingMovies
+VALUES (?);

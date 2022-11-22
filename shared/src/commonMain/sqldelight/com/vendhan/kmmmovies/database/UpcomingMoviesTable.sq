@@ -1,0 +1,13 @@
+CREATE TABLE UpcomingMovies(
+movieID INTEGER NOT NULL,
+FOREIGN KEY (movieID) REFERENCES Movies(id)
+);
+
+selectAll:
+SELECT upcomingMovies.*
+FROM Movies AS upcomingMovies
+INNER JOIN UpcomingMovies ON upcomingMovies.id = UpcomingMovies.movieID;
+
+insertID:
+INSERT OR IGNORE INTO UpcomingMovies
+VALUES (?);
